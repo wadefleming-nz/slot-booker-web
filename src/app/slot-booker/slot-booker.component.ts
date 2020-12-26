@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SlotBookerService } from '../services/slot-booker.service';
 
 @Component({
-  selector: ' ',
+  selector: 'app-slot-booker',
   templateUrl: './slot-booker.component.html',
   styleUrls: ['./slot-booker.component.css'],
 })
-export class SlotBookerComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class SlotBookerComponent {
+  constructor(private slotBookerService: SlotBookerService) {}
 
   findSlotClicked() {
-    console.log('clicked');
+    this.slotBookerService.bookSlot();
   }
 }
